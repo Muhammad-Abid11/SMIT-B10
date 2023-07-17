@@ -1,0 +1,5 @@
+17-July-2023
+1. Width and height dont apply on Inline elements
+2. display : block will convert the whole Inline element into block
+3. display : Inline-block position k lihaz se inline hoga aur element ke lihaz se 
+block hoga aur jo element block hota hai usper Width/apply hoti hai.
