@@ -3,3 +3,11 @@
 2. display : block will convert the whole Inline element into block
 3. display : Inline-block position k lihaz se inline hoga aur element ke lihaz se 
 block hoga aur jo element block hota hai usper Width/apply hoti hai.
+
+
+display: none -> sb khatum
+display: hidden -> jagah use kryga laken dikhaye nhi dyga
+
+
+position absolute(apni merzi)(start me ye apni jagah pe laken jesa top bottom diya phir is k hisab sy)
+-> its enable top left right bottom properties
