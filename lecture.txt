@@ -10,4 +10,4 @@ display: hidden -> jagah use kryga laken dikhaye nhi dyga
 
 
 position absolute(apni merzi)(start me ye apni jagah pe laken jesa top bottom diya phir is k hisab sy)
--> its enable top left right bottom properties
+-> its enable top left right bottom propertiess
