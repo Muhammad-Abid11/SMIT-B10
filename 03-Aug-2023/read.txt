@@ -1,0 +1,23 @@
+bootstrap class
+
+row (parent div)and column (child div)
+
+100% width =12 columns 
+
+
+sir --> jb hum row k under kisi bhi 
+div ko koye class hi na den too wo 100% width ly rha hai 
+
+
+col-sm mobile k ilawa bari devices k liye
+
+
+bare device k small size 425 or sb sy bara 767
+bare device k small size 767 or sb sy bara 1024
+
+ xs: <576px, wo device jo 576 se kam hain yani mobile
+  sm>= 576px,wo device jo 576 se bari hain yani (kuch large mobile) , table, laptops
+  md>= 768px,wo device jo 767 se bari hain , table, laptops
+  lg>= 992px,wo device jo 991 se bari hain , (kuch table), laptops
+  xl>= 1200px,wo device jo 1199 se bari hain , bare laptops
+  xxl>=1400px
