@@ -1,0 +1,20 @@
+1.
+var text="Hello World"
+typeof text----> 'string'
+
+2.
+var age=23
+typeof age ---> 'number'
+
+3.
+alert("my age type is "+ typeof age);
+
+
+4.variable must begin 
+$name, _name ,name
+
+5. JS are case sensitives
+
+6.
+
+
