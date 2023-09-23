@@ -1,0 +1,112 @@
+Assignment (Object)
+
+Q1: Write a program to create student Object and use properties that are as given 
+
+name = “ABS Student” ;
+age = 20;
+student_Id = 420 ;
+
+
+
+
+Show Student Properties in alert box
+
+
+
+Q2: Write a program to check if student is eligible for Module A class,
+ following fields use in Student Object
+
+
+
+Student_Name :  “Rehan Uddin”,
+
+Student_Age : 20  Check the Condition 
+
+
+
+If student age is > 20 then not eligible for Module A classes 
+
+
+
+Q3: Write a program to create two student Mark sheet, 
+and check the conditions as given in question
+
+  
+
+Student_One 
+{
+Student_Name : “Zia Khan”,
+Student_ID : =J30052425300,
+Subject_HTML : 80,
+Student_CSS : 90,
+Student_JAVASCRIPT : 90,
+Student_BOOTSTRAP :  70,
+Total_Marks : 400 
+}
+
+Student_Two
+{
+Student_Name : “Zia Khan”,
+Student_ID : =J30052425300,
+Subject_HTML : 60,
+Student_CSS : 70,
+Student_JAVASCRIPT : 65,
+Student_BOOTSTRAP :  85,
+Total_Marks : 400
+}
+
+Show the percentage for both and check the condition
+, if Student_One’s percentage > Student_Two then eligible for scholarship 
+
+
+Q4. Copy this array to your code
+var arr = [
+{name: 'Asher', age: 22},
+{name: 'Zubair', age: 20},
+{name: 'Kashif', age: 23},
+{name: 'Wasif', age: 17},
+{name: 'Hanzala', age: 28}
+]
+i) Replace the 3rd index with {name: 'Siddiq', age: 23}
+ii) Push {name: 'Umair', age: '23'} from the end
+iii) Remove the first element
+iv) Add a field createdAt: new Date() with each through loop.
+
+Q5. Using above array
+I want an array consisting only those names whose ages are between 18 to 28
+ and their names consist of letter 'f'. Then convert the output array to string. For e.g. ['Asher', 'Zubair'] to 'Asher', 'Zubair'.
+
+Q6.These are two arrays
+var students = [
+{
+_id: 'std1'
+name: 'Bill Gates',
+age: 30
+},
+{
+_id: 'std2'
+name: 'Steve Jobs',
+age: 30
+},
+{
+_id: 'std3'
+name: 'Suzanne Collins',
+age: 30
+}];
+
+var courses = [
+{
+name: 'Maths',
+std_id: ['std3', 'std1']
+},
+{
+name: 'Computer Science',
+std_id: ['std3', 'std2']
+},
+{
+name: 'Commerce',
+std_id: ['std1']
+},
+]
+Expected Output Get an array consisting of student
+ name and student Id with courses (array).
