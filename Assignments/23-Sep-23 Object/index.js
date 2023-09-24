@@ -123,3 +123,19 @@ var courses = [
     },
 ]
 
+// students[0].courses = ["abid"]
+// students[0].courses.push("sajid")
+for (let i = 0; i < students.length; i++) { //loop for student
+    students[i].courses = []    // to insert courses name of every student
+    for (let j = 0; j < students.length; j++) { //loop for each course
+        for (let h = 0; h < students.length; h++) { //loop for each std_id
+            if (students[i]._id == courses[j].std_id[h]) {  // student match each course by each std_id 
+                // console.log(courses[j].name, i, j, h) // kb konsa loop render hua here
+                students[i].courses.push(courses[j].name)
+            }
+        }
+    }
+}
+console.log(students[0])
+console.log(students[1])
+console.log(students[2])
