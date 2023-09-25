@@ -80,15 +80,18 @@ for (let i = 0; i < arr.length; i++) {
 }
 console.log(arr)
 
-
 // 5
-
-
+newArr = []
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i].age > 18 && arr[i].age < 28) {
-        console.log(arr[i].name.toString())
+    if (arr[i].age > 18 && arr[i].age < 28 && arr[i].name.indexOf("f") != -1) {
+        // console.log(i)
+        // console.log(arr[i].name.indexOf("f"))
+        // newArr.push(arr[i])
+        newArr.push(arr[i].name)
     }
 }
+newArr = newArr.toString()
+console.log(newArr)
 
 // 6
 
