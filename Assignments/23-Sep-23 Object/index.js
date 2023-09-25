@@ -60,8 +60,9 @@ var arr = [
     { name: 'Hanzala', age: 28 }
 ]
 // i) Replace the 3rd index with { name: 'Siddiq', age: 23 }
-arr[3].name = "Siddiq"
-arr[3].age = "23"
+// arr[3].name = "Siddiq"
+// arr[3].age = "23"
+arr[3] = { name: 'Siddiq', age: 23 }
 console.log(arr[3])
 
 // ii) Push { name: 'Umair', age: '23' } from the end
