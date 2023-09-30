@@ -1,0 +1,23 @@
+var children = [
+    { name: "Pappu", parents: ["p1", "p2"] },
+    { name: "Aslam", parents: ["p3", "p4"] },
+    { name: "Nattu", parents: ["p1", "p5"] },
+]
+
+var parents = [
+    { _id: "p1", name: "Chotu" },
+    { _id: "p2", name: "Choti" },
+    { _id: "p3", name: "Bhola" },
+    { _id: "p4", name: "Bholi" },
+    { _id: "p5", name: "Koken Bhen" },
+]
+
+for (let i = 0; i < children.length; i++) {
+    children[i].parentsName = [];
+    for (let j = 0; j < parents.length; j++) {
+        if (children[i].parents.includes(parents[j]._id)) {
+            children[i].parentsName.push(parents[j].name);
+        }
+    }
+}
+children
