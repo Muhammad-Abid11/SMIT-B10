@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <style>
+        #box-1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            margin: auto;
+            max-width: 23%;
+            min-width: 300px;
+            background-color: orange;
+        }
+
+        #box-2 {
+            margin: auto;
+            background-color: orangered;
+            height: 30%;
+            max-width: 23%;
+            min-width: 300px;
+        }
+
+        #inputs {
+            width: 45%;
+            font-weight: bolder;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid;
+        }
+
+        .buttons {
+            margin: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box-1">
+        <h1>Calculator</h1>
+    </div>
+    <div id="box-2">
+        <div>
+            <input type="text" placeholder="Number" id="inputs">
+            <button class="buttons" onClick="cls()">Clear</button>
+        </div>
+
+        <div>
+            <button class="buttons" onClick="btnValue('7')">7</button>
+            <button class="buttons" onClick="btnValue('8')">8</button>
+            <button class="buttons" onClick="btnValue('9')">9</button>
+            <button class="buttons" onClick="btnValue('/')">/</button>
+        </div>
+        <div>
+            <button class="buttons" onClick="btnValue('4')">4</button>
+            <button class="buttons" onClick="btnValue('5')">5</button>
+            <button class="buttons" onClick="btnValue('6')">6</button>
+            <button class="buttons" onClick="btnValue('*')">*</button>
+        </div>
+        <div>
+            <button class="buttons" onClick="btnValue('1')">1</button>
+            <button class="buttons" onClick="btnValue('2')">2</button>
+            <button class="buttons" onClick="btnValue('3')">3</button>
+            <button class="buttons" onClick="btnValue('-')">-</button>
+        </div>
+        <div>
+            <button class="buttons" onClick="btnValue('0')">0</button>
+            <button class="buttons" onClick="btnValue('.')">.</button>
+            <button class="buttons" onClick="Cal()">=</button>
+            <button class="buttons" onClick="btnValue('+')">+</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

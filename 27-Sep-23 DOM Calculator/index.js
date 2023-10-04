@@ -16,6 +16,7 @@ function calculate() {
     var value = inputElement.value
     var result = eval(value)
     inputElement.value = result
+    // input=result;  //sir 
 
 }
 
