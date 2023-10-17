@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance App</title>
+    <script src="index.js"></script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        #resultTable {
+            background-color: yellow;
+            color: red;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- apne 2 input baanana hai 1 project name 2nd project cost -->
+    <!-- 2 button 1st Add Income 2nd Add Expense -->
+    <!-- addincome or addExpense me same function call kr k us k parameter me btado ye khn sy call hua -->
+    <!-- then table me add krdo usy  table me 3 column 1st project name, 2nd project cost, 3rd income/expense` -->
+    <!-- at the end apne uska result show krna hai -->
+    <div id="container">
+        <div>
+            <input id="ProjectName" type="text" required placeholder="Enter Name of Project">
+            <input id="amount" type="text" required placeholder="Enter Amount">
+            <button onclick="addRecord('Income')">Add Income</button>
+            <button onclick="addRecord('Expense')">Add Expense</button>
+        </div>
+        <div>
+            <table id='table' border="1">
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                </tr>
+                <tbody id="tableBody">
+                    <!-- Table rows will go here -->
+                </tbody>
+                <tr class="hide" id="resultTable">
+                    <th>Total</th>
+                    <th id="totalAmount">00</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

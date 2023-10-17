@@ -21,6 +21,31 @@ var questions = [
     }
 ]
 
+// for API and  loader idea nichy sb dummy hai
+/*      
+getData() //run directly    
+
+function getData(){
+    fetch("URL")
+    .then((res)=>res.json)
+    // .res((res)=>questions=res)// update questions array 
+    .res((res)=>{
+        questions=res
+        var loadingElement=document.getElementById("loaderKiID");
+        loadingElement.className = "hide"
+        var startElement=document.getElementById("startKiID");
+        startElement.className = ""
+    })// update questions array 
+
+}
+
+    // option ki new array me incorrect or correct ko combine kr k 
+    // internet sy suffling krdo array ko
+
+ */
+// ---------------
+
+
 var count = 0;
 function startQuiz() {
     var reset = document.getElementById("Reset");
@@ -45,6 +70,9 @@ function startQuiz() {
 }
 
 function nextQues() {
+    // NEXT K ander hum checked value ko check kren by tagName sy call kr k
+    // or wo value ko compare kro correct answer sy or score upkrdo or ya too isy 1 function me enter krdo
+    // or agy next question show hojayega 
     count++
     if (count < questions.length) {
         var quesTitle = document.getElementById("title");
@@ -52,7 +80,6 @@ function nextQues() {
     } else {
         result()
     }
-
 }
 
 

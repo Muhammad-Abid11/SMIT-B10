@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Quiz Application</h1>
+        <button onclick="start()">Start Quiz</button>
+    </div>
+
+    <div class="hide" id="questionContainer">
+        <h1 id="timer">30</h1>
+
+        <h1 id="questionTitle">How are you?</h1>
+        <ul id="questionOptions"></ul>
+        <button onclick="next()">Next</button>
+    </div>
+
+    <div class="hide" id="resultContainer">
+        <h1>Result</h1>
+        <h3 id="score">Abc</h3>
+        <Button onclick="restartss()">Restart Quiz</Button>
+    </div>
+
+</body>
+
+</html>
