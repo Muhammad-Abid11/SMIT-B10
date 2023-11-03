@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+    <script>
+        // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "";
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBvn_wJ-rR3ZnX44aEEIHi0uMLOXGKZkIk",
+            authDomain: "jscriptauth.firebaseapp.com",
+            projectId: "jscriptauth",
+            storageBucket: "jscriptauth.appspot.com",
+            messagingSenderId: "45452062308",
+            appId: "1:45452062308:web:f0d2d43d37d9a339bf3971"
+        };
+        // firebase.initializeApp(firebaseConfig);
+        // console.log(firebase)
+        // const app = initializeApp(firebaseConfig);
+    </script>
+
+</head>
+
+<body>
+    <div class="form">
+        <input placeholder="Enter Email" type="email" id="email">
+        <br> <input type="password" placeholder="Enter password" id="password">
+        <br>
+        <button onclick="signup()">Sign Up</button>
+    </div>
+
+    <br><br>
+    <div class="form">
+        <input placeholder="Enter Email" type="email" id="login-email">
+        <br> <input type="password" placeholder="Enter password" id="login-password">
+        <br>
+        <button onclick="login()">Login</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
