@@ -12,14 +12,19 @@ async function getData() {
         loader.className = "hide"
         var content = document.getElementById("content");
         content.className = " "
-    }, 4000)
-
+    }, 2000)
     for (let i = 0; i < products.length; i++) {
 
         var main = document.getElementById("main")
         //upper main ko target krliya
         var divCard = document.createElement("div")
         divCard.className = "card"
+
+        divCard.onclick = function () {
+            // yhn humne query param"?""  use kiya hai 
+            //? k bad "productid" ye 1 variable hai jis me  
+            window.location.href = "./product_details/details.html?productid=" + products[i].id
+        }
         //upper ab card k liye div bana hai or ishi me sb ab hongy
 
         // ab image/description bana kr k divCard k sath connect krna hai
@@ -47,12 +52,12 @@ async function getData() {
 
         var priceElement = document.createElement("p");
         priceElement.setAttribute("id", "price");
-        priceElement.innerHTML = products[i].price;
+        priceElement.innerHTML = products[i].price + "$";
         // console.log(priceElement)
 
         // divContainer me heading price or description add kro
         divContainer.append(h4)
-        divContainer.append(descriptionElement)
+        // divContainer.append(descriptionElement)
         divContainer.append(priceElement)
         // console.log(divContainer)
 
