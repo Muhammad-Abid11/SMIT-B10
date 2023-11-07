@@ -13,9 +13,8 @@ ul {
   overflow: hidden;
   background-color: #333;
 }
-
-li {
-  float: left;
+a{
+  cursor: pointer;
 }
 
 li a {
@@ -28,6 +27,27 @@ li a {
 
 li a:hover {
   background-color: #111;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    /* padding: 10px; */
+}
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+.login-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0px 20px;
 }
 
 
@@ -54,4 +74,66 @@ main{
 
 .container {
   padding: 2px 16px;
+}
+
+
+/* add to cart */
+
+.addBtn{
+  width: 100%;
+  background-color: coral;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  /* margin: 0px 20px; */
+}
+
+
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/* Style individual sections within the footer */
+.footer-section {
+    padding: 20px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.social-links {
+    font-size: 16px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.social-links a i {
+    margin-right: 5px;
 }

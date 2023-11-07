@@ -1,6 +1,37 @@
 // https://fakestoreapi.com/products 
 
-var count = 0
+
+// For login logout toggle
+const users = JSON.parse(localStorage.getItem('users'))
+// upper user k data liya agar user login hoto uska name show kren
+const logged_In = JSON.parse(localStorage.getItem('logged_In'))
+if (logged_In) {//agar login true too logout show krdo
+    var link = document.getElementById("loginBtns");
+    link.innerHTML = "Logout";
+    var userName = document.getElementById("userName"); //user k name 
+    userName.innerHTML = users[0].name
+}
+function Login() {
+    var link = document.getElementById("loginBtns");
+    if (link.innerHTML === "Login" && !logged_In) {
+        window.location.href = "./src/login/login.html"
+        link.innerHTML = "Logout";
+    } else {
+        Logout();
+        link.innerHTML = "Login";
+        userName.innerHTML = "Store ABC"
+
+    }
+}
+function Logout() {
+    localStorage.removeItem("logged_In")
+    window.location.href = "./index.html"
+}
+// For login logout toggle Up
+
+
+
+// var count = 0
 async function getData() {
     var data = await fetch("https://fakestoreapi.com/products");
     var products = await data.json()
@@ -23,7 +54,7 @@ async function getData() {
         divCard.onclick = function () {
             // yhn humne query param"?""  use kiya hai 
             //? k bad "productid" ye 1 variable hai jis me  
-            window.location.href = "./product_details/details.html?productid=" + products[i].id
+            window.location.href = "./src/product_details/details.html?productid=" + products[i].id
         }
         //upper ab card k liye div bana hai or ishi me sb ab hongy
 
@@ -55,6 +86,11 @@ async function getData() {
         priceElement.innerHTML = products[i].price + "$";
         // console.log(priceElement)
 
+        // create addCartBtn
+        var addCartBtn = document.createElement("button");
+        addCartBtn.innerHTML = "Add to Cart"
+        addCartBtn.className = "addBtn"
+
         // divContainer me heading price or description add kro
         divContainer.append(h4)
         // divContainer.append(descriptionElement)
@@ -62,6 +98,7 @@ async function getData() {
         // console.log(divContainer)
 
         // ab image(upper connect hai)/description bana kr k divCard k sath connect krna hai
+        divContainer.append(addCartBtn)
         divCard.append(divContainer);
         // console.log(divCard)
 

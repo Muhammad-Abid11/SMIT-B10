@@ -5,37 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store ABC</title>
-    <script src="index.js"></script>
     <link rel="shortcut icon" href="assests/storess.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body loading="lazy">
 
-    <div id="loader">
+    <div id="loader" class="hide">
         <img src="assests/04Gzjgh9Y7Gu8KEtZ.gif" alt="loader" style=" width: 50%;margin: auto;display: flex;">
     </div>
-    <div id="content" class="hide">
-        <nav>
-            <ul style="display: flex;align-items: center;">
-                <li><a class="active" href="#home"><img src="assests/store2.png" width="30"></a></li>
-                <li><a href="#news">Store ABC</a></li>
+    <div id="content">
+        <nav class="navbar">
+            <ul class="logo-title">
+                <li><a class="active" href="./index.html"><img src="./assests/storess.png" width="30"></a></li>
+                <li><a href="./index.html" id="userName">Store ABC</a></li>
                 <li><a href="https://github.com/Muhammad-Abid11">Contact</a></li>
             </ul>
+            <a onClick="Login()" id="loginBtns" class="login-button">Login</a>
         </nav>
+
         <main id="main">
-            <!--
-        <div class="card"> //for just css use to target elements
-            <img id="cardImage" src="assests/bike.jpg" alt="Avatar" style="width:100%">
-            <div class="container">
-                <h4 id="title">John Doe</h4>
-                <p id="description">Architect & Engineer</p>
-                <p><b id="price">Architect & Engineer</b></p>
+            <!-- <div class="card">
+                 //for just css use to target elements 
+                <img id="cardImage" src="assests/bike.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4 id="title">John Doe</h4>
+                    <p id="description">Architect & Engineer</p>
+                    <p><b id="price">Architect & Engineer</b></p>
+                    <button class="addBtn">Add to Cart</button>
+                </div>
+            </div> -->
+        </main>
+
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h2>Contact Us</h2>
+                    <p>Email: abidkhan11845@gmail.com</p>
+                    <p>Phone: 0308-2434421</p>
+                </div>
+                <div class="footer-section">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h2>Follow Us</h2>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    -->
-        </main>
+
     </div>
+    <script src="index.js"></script>
 
 </body>
 
