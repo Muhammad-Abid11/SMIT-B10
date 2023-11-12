@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        LoginIn page
+    </h1>
+    <form id="form">
+        <input type="email" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Enter Password">
+        <input type="submit">
+    </form>
+
+    <script>
+        const form = document.querySelector('#form')
+        const email = document.querySelector('#email')
+        const password = document.querySelector('#password')
+
+        form.addEventListener('submit', (event) => { //"submit" k jagah agar "click" use krengy to kahen pe click pe bhi work kryga 
+            event.preventDefault();  //form k default behavoiur hai form submit k bad clear krdo usy rokne k liye
+            console.log("form email password", form, email, password)
+        })
+
+    </script>
+</body>
+
+</html>

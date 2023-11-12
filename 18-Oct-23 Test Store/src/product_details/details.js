@@ -4,21 +4,16 @@
 // For login logout toggle
 const users = JSON.parse(localStorage.getItem('users'))
 // upper user k data liya agar user login hoto uska name show kren
-for (let i = 0; i < array.length; i++) {
-    console.log("user me check kr")
-    if (users[i].login === "true") { //agar login true too logout show krdo
-        var link = document.getElementById("loginBtns");
-        console.log("user me check kr 2")
-        link.innerHTML = "Logout";
-        var userName = document.getElementById("userName"); //user k name 
-        // userName.innerHTML = users[0].name
-        userName.innerHTML = users[i].name
-        break;
-    }
+const logged_In = JSON.parse(localStorage.getItem('logged_In'))
+if (logged_In) { //agar login true too logout show krdo
+    var link = document.getElementById("loginBtns");
+    link.innerHTML = "Logout";
+    var userName = document.getElementById("userName"); //user k name 
+    userName.innerHTML = users[0].name
 }
 function Login() {
     var link = document.getElementById("loginBtns");
-    if (link.innerHTML === "Login") {
+    if (link.innerHTML === "Login" && !logged_In) {
         window.location.href = "../login/login.html"
         link.innerHTML = "Logout";
     } else {
@@ -30,17 +25,6 @@ function Login() {
 function Logout() {
     localStorage.removeItem("logged_In") //logout hojao too localStorage sy true bhi khatm
     window.location.href = "../../index.html"
-
-    for (let i = 0; i < array.length; i++) {
-        console.log("user me check kr 4")
-
-        if (users[i].login === true) { //agar logout hoto login remove krdo
-            console.log("user me check kr 3")
-            delete users[i].login;
-            localStorage.setItem("users", JSON.stringify(users));
-
-        }
-    }
 }
 // For login logout toggle Up
 
