@@ -99,6 +99,19 @@ main{
 
 
 
+.addBtn{
+  width: 20%;
+  background-color: coral;
+  color: white;
+  padding: 20px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+
+}
 
 
 
