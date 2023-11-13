@@ -1,9 +1,18 @@
 // 11.ab login k js me yhi import 2 link paste kr k "signInWithEmailAndPassword" k search kro 
 // 12.logout nhi horha hai firebase sy abhi tk mujhy sy
 
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { onAuthStateChanged, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 import { auth } from "./config.js"
 
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        console.log(user);
+        console.log("login krlo bhai pehly")
+    } else {
+        window.location = './home.html'
+    }
+});
 
 const form = document.querySelector('#form')
 const email = document.querySelector('#email')

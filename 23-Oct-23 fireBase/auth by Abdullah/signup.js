@@ -7,11 +7,23 @@
 
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";<-- firebase ki jagah URL likho Upper sy or auth.js krdo
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { onAuthStateChanged, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
 // const auth = getAuth(); //ye apne pehly hi apne app k sath connect kiya huawa hai to usy hi import krlo
 //ye ap isliye bhi use nhi krsakty k ye async work kryga shyd is liye bhi
 import { auth } from "./config.js"
+
+
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        console.log(user);
+        console.log("login kr pehly register");
+    } else {
+        window.location = './home.html'
+    }
+});
+
 
 const form = document.querySelector('#form')
 const email = document.querySelector('#email')

@@ -1,3 +1,8 @@
+// module
+// 1st type = "module"
+// 2nd work in live server
+// 3rd onClick work nhi kryga apne addEventlistner use krna hoga
+
 // import/export liveServer hi pe work krta hai
 // 1.form create krne k bad ap project create kren
 // 2.project create k bad project connect kren CDN k through WEB select kr k
