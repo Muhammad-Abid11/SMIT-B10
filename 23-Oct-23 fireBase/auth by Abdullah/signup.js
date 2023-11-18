@@ -11,36 +11,61 @@ import { onAuthStateChanged, createUserWithEmailAndPassword } from "https://www.
 
 // const auth = getAuth(); //ye apne pehly hi apne app k sath connect kiya huawa hai to usy hi import krlo
 //ye ap isliye bhi use nhi krsakty k ye async work kryga shyd is liye bhi
-import { auth } from "./config.js"
+import { db, auth } from "./config.js"
+// 17.import firestore elements and allow firebaseStore
+// fireStore-->CreateDataBase-->SelectLocation-->TestMode-->Enable 
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 
 
-onAuthStateChanged(auth, (user) => {
+//agar "onAuthStateChange" huawa too wo dashboard pe ly k jayega q k "user" usy miljayega or
+//  fireStore me Data bhi save nhi hoga q k Async operation last me hota hai 
+/* onAuthStateChanged(auth, (user) => {
     if (!user) {
         console.log(user);
         console.log("login kr pehly register");
     } else {
-        window.location = './home.html'
+        window.location = './Dashboard.html'
     }
 });
-
+ */
 
 const form = document.querySelector('#form')
 const email = document.querySelector('#email')
+const fullname = document.querySelector('#fullname')
 const password = document.querySelector('#password')
+const phonenumber = document.querySelector('#phonenumber')
 
 form.addEventListener('submit', (event) => {//"sibmit" work when submit button work,warna "click" work every tap
     event.preventDefault();
     // console.log("form email password", form, email.value, fullname.value, password.value)
     createUserWithEmailAndPassword(auth, email.value, password.value)//<---email,password(values)
-        .then((userCredential) => {
+        .then(async (userCredential) => {
+
+            // user register k bad extra information dataBase me
+            /* FireStore start firestore sy allow bhi on krdo*/
+            try {
+                const docRef = await addDoc(collection(db, "users"), {
+                    fullname: fullname.value,
+                    email: email.value,
+                    phonenumber: phonenumber.value
+                });
+                console.log("Document written with ID: ", docRef.id);
+                alert("Registered Successfully")
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+            /* FireStore End*/
+
             const user = userCredential.user;
             console.log("User Register Successfully", user)
-            window.location = 'signIn.html'  // redirect to login page
+            window.location = 'signIn.html'  // redirect to login page--> dashboard due to "onAuthstateChange" found "user"
+            //agar "onAuthStateChange" huawa too wo dashboard pe ly k jayega q k "user" usy miljayega or
+            //  fireStore me Data bhi save nhi hoga q k Async operation last me hota hai 
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
+            const errorMessage = error.message.split(": ")[1]; //error ko split krdo ": " k pass sy or uska 2nd index ko save krdo
             console.log("User Registration Failed", errorMessage)
         });
 })

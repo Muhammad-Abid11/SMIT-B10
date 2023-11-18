@@ -12,8 +12,12 @@
 // 6."initializeApp" k url ko copy//paste kr k "app-->auth" likh do or new const me save kr k export
 // 7. firebase login with email and password or ab search kro "createUserWithEmailAndPassword" or ab signup.js open kro 
 
+
+// 15.FireStore import kr k export krdo
+// 16.signUp me extra information ko jb user "register" ho "database" me save krdo
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyB419c-FomucS8BUl51aASvSRV687NPJ1I",
@@ -28,3 +32,4 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
