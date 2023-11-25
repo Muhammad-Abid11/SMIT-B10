@@ -16,8 +16,8 @@
 // 15.FireStore import kr k export krdo
 // 16.signUp me extra information ko jb user "register" ho "database" me save krdo
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
-import { collection, addDoc, getFirestore, getDocs } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { onAuthStateChanged, getAuth } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { getDoc, doc, setDoc, collection, addDoc, getFirestore, getDocs } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { uploadBytesResumable, getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
 
 const firebaseConfig = {
@@ -36,6 +36,7 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 
 export {
+    doc, getDoc, setDoc, onAuthStateChanged,
     collection, addDoc, getDocs,
     getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable
 }

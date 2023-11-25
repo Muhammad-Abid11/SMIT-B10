@@ -7,11 +7,11 @@
 
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 // import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";<-- firebase ki jagah URL likho Upper sy or auth.js krdo
-import { onAuthStateChanged, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
 // const auth = getAuth(); //ye apne pehly hi apne app k sath connect kiya huawa hai to usy hi import krlo
 //ye ap isliye bhi use nhi krsakty k ye async work kryga shyd is liye bhi
-import { db, auth } from "./config.js"
+import { onAuthStateChanged, doc, db, auth, setDoc } from "./config.js"
 // 17.import firestore elements and allow firebaseStore
 // fireStore-->CreateDataBase-->SelectLocation-->TestMode-->Enable 
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
@@ -45,12 +45,20 @@ form.addEventListener('submit', (event) => {//"sibmit" work when submit button w
             // user register k bad extra information dataBase me
             /* FireStore start firestore sy allow bhi on krdo*/
             try {
-                const docRef = await addDoc(collection(db, "users"), {
+
+                /*                 const docRef = await addDoc(collection(db, "users"), {
+                                    fullname: fullname.value,
+                                    email: email.value,
+                                    phonenumber: phonenumber.value
+                                }); */
+                const docRef = await setDoc(doc(db, "users", userCredential.user.uid), {
                     fullname: fullname.value,
                     email: email.value,
                     phonenumber: phonenumber.value
                 });
-                console.log("Document written with ID: ", docRef.id);
+
+                // console.log("Document written with ID: ", docRef.id);
+                console.log("Document written with ID-->: ", docRef);
                 alert("Registered Successfully")
             } catch (e) {
                 console.error("Error adding document: ", e);
@@ -59,7 +67,7 @@ form.addEventListener('submit', (event) => {//"sibmit" work when submit button w
 
             const user = userCredential.user;
             console.log("User Register Successfully", user)
-            window.location = 'signIn.html'  // redirect to login page--> dashboard due to "onAuthstateChange" found "user"
+            // window.location = 'signIn.html'  // redirect to login page--> dashboard due to "onAuthstateChange" found "user"
             //agar "onAuthStateChange" huawa too wo dashboard pe ly k jayega q k "user" usy miljayega or
             //  fireStore me Data bhi save nhi hoga q k Async operation last me hota hai 
         })

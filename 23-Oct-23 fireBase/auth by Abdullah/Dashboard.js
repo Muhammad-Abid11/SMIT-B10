@@ -4,9 +4,9 @@
 // 14.now ab "signOut(auth)" k jb function jb call hoga wo user ki "id" bhi remove krdyga "localstorage" sy
 
 
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
-import { auth, db, collection, getDocs } from "./config.js";
+import { onAuthStateChanged, auth, db, collection, getDocs } from "./config.js";
 
 // ye "onAuthStateChanged" humen sb jagah use krna hoga warna "login" k bad bhi ap "login" pe ja sakty hen   
 //bus wahn condition me "!user" use kro
@@ -14,7 +14,11 @@ import { auth, db, collection, getDocs } from "./config.js";
 onAuthStateChanged(auth, (user) => { //agar user me "true" hoto raho warna "index.html" per jao
     if (user) { //yhn jo user login huawa hai uski sb details hen 
         //jo login huawa hai uski id
+
+        console.log("online user-->", user.email);
         console.log("logout kro pehly");
+        const emailElement = document.getElementById('email')
+        emailElement.innerHTML = "Online ---" + user.email
 
 
         renderAds()//user mil jaye too Ads ko render kr k ly ao
@@ -37,7 +41,8 @@ async function renderAds() {
         const card = document.createElement('div')
         card.className = 'card'
         card.onclick = function () {
-            location.href = '../detail/detail.html?adId=' + ad.id
+            // location.href = '../detail/detail.html?adId=' + ad.id
+            location.href = './details.html?adId=' + ad.id
         }
 
         const img = document.createElement('img')
