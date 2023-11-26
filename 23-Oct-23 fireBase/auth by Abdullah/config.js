@@ -15,10 +15,14 @@
 
 // 15.FireStore import kr k export krdo
 // 16.signUp me extra information ko jb user "register" ho "database" me save krdo
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import { onAuthStateChanged, getAuth } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
-import { getDoc, doc, setDoc, collection, addDoc, getFirestore, getDocs } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
-import { uploadBytesResumable, getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
+import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+import { onAuthStateChanged, getAuth }
+    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { getDoc, doc, setDoc, collection, addDoc, getFirestore, getDocs, where, query }
+    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { uploadBytesResumable, getStorage, ref, uploadBytes, getDownloadURL }
+    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyB419c-FomucS8BUl51aASvSRV687NPJ1I",
@@ -37,6 +41,6 @@ export const db = getFirestore(app);
 
 export {
     doc, getDoc, setDoc, onAuthStateChanged,
-    collection, addDoc, getDocs,
+    collection, addDoc, getDocs, where, query,
     getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable
 }
