@@ -15,9 +15,12 @@
 
 // 15.FireStore import kr k export krdo
 // 16.signUp me extra information ko jb user "register" ho "database" me save krdo
+
+import { }
+    from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 import { initializeApp }
     from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
-import { onAuthStateChanged, getAuth }
+import { signInWithPopup, FacebookAuthProvider, onAuthStateChanged, getAuth }
     from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 import { getDoc, doc, setDoc, collection, addDoc, getFirestore, getDocs, where, query }
     from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
@@ -38,8 +41,10 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+const provider = new FacebookAuthProvider();
 
 export {
+    signInWithPopup, provider,
     doc, getDoc, setDoc, onAuthStateChanged,
     collection, addDoc, getDocs, where, query,
     getStorage, ref, uploadBytes, getDownloadURL, uploadBytesResumable
