@@ -1,7 +1,20 @@
 
 
-import { uploadBytesResumable, auth, db, collection, addDoc, getStorage, ref, uploadBytes, getDownloadURL } from "./config.js"
+import { onAuthStateChanged, uploadBytesResumable, auth, db, collection, addDoc, getStorage, ref, uploadBytes, getDownloadURL } from "./config.js"
 
+onAuthStateChanged(auth, (user) => { //agar user me "true" hoto raho warna "index.html" per jao
+    if (user) { //yhn jo user login huawa hai uski sb details hen 
+        //jo login huawa hai uski id
+
+        console.log("online user-->", user.email);
+        console.log("logout kro pehly");
+        const emailElement = document.getElementById('email')
+        emailElement.innerHTML = "Online ---" + user.email
+
+    } else {
+        window.location = 'signIn.html'
+    }
+});
 
 const storage = getStorage();
 
